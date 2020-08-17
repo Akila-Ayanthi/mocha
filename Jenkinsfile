@@ -1,7 +1,7 @@
 pipeline {
     agent any
   
-    tools {nodejs "node"}
+    
     
     stages {
         stage('Cloning Git') {
@@ -11,6 +11,9 @@ pipeline {
         }
         stage('Install Dependencies'){
             steps {
+		nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
+                    sh 'npm config ls'
+		}
                 sh 'npm install'
             }
         }
