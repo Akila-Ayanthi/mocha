@@ -1,7 +1,10 @@
 pipeline {
     agent any
     
-  
+  environment {
+		NODE_HOME="${tool 'nodejs'}"
+        PATH="${env.NODE_HOME}/bin:${env.PATH}"
+	}
     
     stages {
         stage('Cloning Git') {
