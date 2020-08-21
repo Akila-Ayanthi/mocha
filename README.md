@@ -6,3 +6,4 @@
 
 #this is just for a testing purpose
 another line
+line 02 added
